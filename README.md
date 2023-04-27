@@ -3,10 +3,10 @@
 
 
 #### Exercise 1 - Adding Elements to LinkedList:
-- Start by creating a new method in our LinkedList class called "add_list_elements".
+- Start by creating a new method in our LinkedList class called `add_list_elements`.
 - This method should take in a list as an argument.
 - Loop through each element in the list and convert it to a node.
-- Add each node to the end of the linked list using the "add_node" method we already have in the class.
+- Add each node to the end of the linked list using the `add_node` method we already have in the class.
 
 [LinkedList.py](https://github.com/geanu02/wk4-dy3-advancedpythonhw/blob/main/LinkedList.py): Lines 80 - 92
 
