@@ -11,7 +11,7 @@ class Pokemon():
         self.image = None
         self.call_poke_api()
         self.pokes = []
-        self.evolve_chain = []
+        self.evolve_chain = LinkedList()
 
     def call_poke_api(self):
         if isinstance(self.name, str) and self.name.isalpha():
@@ -44,12 +44,24 @@ class Pokemon():
     def evolve_pokemon(self, evolution_chain):
         if not evolution_chain['evolves_to']:
             print(f'This is the final from')
-            return
+            return self.evolve_chain
         current_pokemon_in_chain = evolution_chain['species']['name']
         next_pokemon_in_chain = evolution_chain['evolves_to'][0]['species']['name']
         if current_pokemon_in_chain == self.name:
             self.name = next_pokemon_in_chain
-            self.call_poke_api()
-            return
+#            self.call_poke_api()
+            self.add_evolve_chain(next_pokemon_in_chain)
+            return self.evolve_chain
         else:
             return self.evolve_pokemon(evolution_chain['evolves_to'][0])
+        
+    def add_evolve_chain(self, value):
+        self.evolve_chain.add_node(value.title())
+
+
+charmander = Pokemon('charmander')
+evolve = charmander.evolve_pokemon(charmander.get_evolution_chain())
+evolve = charmander.evolve_pokemon(charmander.get_evolution_chain())
+evolve = charmander.evolve_pokemon(charmander.get_evolution_chain())
+
+print(evolve)
