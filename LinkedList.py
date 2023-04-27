@@ -75,15 +75,22 @@ class LinkedList:
                 node = node.right
         node.right = None
 
-# Problem 1: Add method that accepts a list and take each element and add to our Linked List
-    def add_list_of_nodes(self, alist):
-        pass
+# Exercise 1: Adding Elements to LinkedList
 
-# Problem 2: Evolution Chain attribute is all the pokemon in the evolution chain as a Linked List
-                    
-# linked_list = LinkedList()
+    def add_list_elements(self, alist):
+        for elem in alist:
+            self.add_node(elem)
 
-# linked_list.add_node('Sunday')
+linked_list = LinkedList()
+
+linked_list.add_node('Sunday')
+
+linked_list.add_list_elements(['Monday', 'Tuesday', 'Wednesday'])
+
+print(linked_list)
+print(linked_list.head.right.value)
+print(linked_list.head.right.right.right.value)
+
 # linked_list.add_node('Monday')
 # linked_list.add_node('Wednesday')
 # linked_list.add_node('Thursday')
